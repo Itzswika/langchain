@@ -1,0 +1,16 @@
+.env
+db/
+# Virtual Environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Temporary files from our setup
+DDocuments
+DDocuments.pub
+test_firestore.py
