@@ -9,7 +9,7 @@ Steps to replicate this example:
 (See updated setup instructions below the code)
 """
 
-# Load environment variables from .env file (for GOOGLE_API_KEY)
+# #Load environment variables from .env file (for GOOGLE_API_KEY)
 load_dotenv()
 
 # --- Setup Firebase Firestore ---

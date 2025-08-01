@@ -2,7 +2,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, SystemMessage
 
-# Setup environment variables and messages
+# #Setup environment variables and messages
 load_dotenv()
 
 messages = [

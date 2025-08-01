@@ -1,4 +1,4 @@
-# 1. Make sure you have installed the necessary library:
+## 1. Make sure you have installed the necessary library:
 # pip install langchain-google-genai python-dotenv
 
 # 2. Import the required libraries

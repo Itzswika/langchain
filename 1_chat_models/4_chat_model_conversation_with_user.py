@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 
-# Load environment variables (needs GOOGLE_API_KEY in .env)
+# #Load environment variables (needs GOOGLE_API_KEY in .env)
 load_dotenv()
 
 # Initialize the Gemini model

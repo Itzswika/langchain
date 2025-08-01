@@ -3,7 +3,7 @@ from langchain.prompts import ChatPromptTemplate
 # The import is changed to use Google's model
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-# Load environment variables (ensure GOOGLE_API_KEY is in your .env file)
+# #Load environment variables (ensure GOOGLE_API_KEY is in your .env file)
 load_dotenv()
 
 # Create a Google Gemini model instead of ChatOpenAI
