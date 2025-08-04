@@ -9,7 +9,7 @@ from langchain.text_splitter import (
 )
 from langchain_community.document_loaders import TextLoader
 from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
+from langchain_google_genai  import GoogleGenerativeAIEmbeddings
 
 # Define the directory containing the text file
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -27,8 +27,8 @@ loader = TextLoader(file_path)
 documents = loader.load()
 
 # Define the embedding model
-embeddings = OpenAIEmbeddings(
-    model="text-embedding-3-small"
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/embedding-001" 
 )  # Update to a valid embedding model if needed
 
 

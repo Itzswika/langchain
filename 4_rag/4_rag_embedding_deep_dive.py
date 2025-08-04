@@ -4,7 +4,7 @@ from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
 from langchain_community.vectorstores import Chroma
-from langchain_openai import OpenAIEmbeddings
+from langchain_google_genai  import GoogleGenerativeAIEmbeddings
 
 # Define the directory containing the text file and the persistent directory
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -44,13 +44,9 @@ def create_vector_store(docs, embeddings, store_name):
             f"Vector store {store_name} already exists. No need to initialize.")
 
 
-# 1. OpenAI Embeddings
-# Uses OpenAI's embedding models.
-# Useful for general-purpose embeddings with high accuracy.
-# Note: The cost of using OpenAI embeddings will depend on your OpenAI API usage and pricing plan.
-# Pricing: https://openai.com/api/pricing/
+#gemini ai embeddings
 print("\n--- Using OpenAI Embeddings ---")
-openai_embeddings = OpenAIEmbeddings(model="text-embedding-ada-002")
+openai_embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 create_vector_store(docs, openai_embeddings, "chroma_db_openai")
 
 # 2. Hugging Face Transformers
@@ -64,7 +60,7 @@ huggingface_embeddings = HuggingFaceEmbeddings(
 )
 create_vector_store(docs, huggingface_embeddings, "chroma_db_huggingface")
 
-print("Embedding demonstrations for OpenAI and Hugging Face completed.")
+print("Embedding demonstrations for Gemini and Hugging Face completed.")
 
 
 # Function to query a vector store
@@ -95,7 +91,7 @@ def query_vector_store(store_name, query, embedding_function):
 query = "Who is Odysseus' wife?"
 
 # Query each vector store
-query_vector_store("chroma_db_openai", query, openai_embeddings)
+query_vector_store("chroma_db_google_genai", query, GoogleGenerativeAIEmbeddings)
 query_vector_store("chroma_db_huggingface", query, huggingface_embeddings)
 
 print("Querying demonstrations completed.")
