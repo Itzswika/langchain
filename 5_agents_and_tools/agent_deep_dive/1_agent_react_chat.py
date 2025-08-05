@@ -47,7 +47,7 @@ tools = [
 # Load the correct JSON Chat Prompt from the hub
 prompt = hub.pull("hwchase17/structured-chat-agent")
 
-# Initialize a ChatOpenAI model
+# Initialize a google genai model
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 
 # Create a structured Chat Agent with Conversation Buffer Memory
@@ -69,10 +69,10 @@ agent_executor = AgentExecutor.from_agent_and_tools(
     handle_parsing_errors=True,  # Handle any parsing errors gracefully
 )
 
-# Initial system message to set the context for the chat
-# SystemMessage is used to define a message from the system to the agent, setting initial instructions or context
-initial_message = "You are an AI assistant that can provide helpful answers using available tools.\nIf you are unable to answer, you can use the following tools: Time and Wikipedia."
-memory.chat_memory.add_message(SystemMessage(content=initial_message))
+# # Initial system message to set the context for the chat
+# # SystemMessage is used to define a message from the system to the agent, setting initial instructions or context
+# initial_message = "You are an AI assistant that can provide helpful answers using available tools.\nIf you are unable to answer, you can use the following tools: Time and Wikipedia."
+# memory.chat_memory.add_message(SystemMessage(content=initial_message))
 
 # Chat Loop to interact with the user
 while True:
